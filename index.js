@@ -231,7 +231,7 @@ Using the feet function below do the following:
 */
 
 function feet(cm){
-    return cm * .0328084;
+    return cm / 30.48;
   }
 
 console.log(feet(350));
@@ -249,8 +249,9 @@ Using the annoyingSong function below do the following:
 */
 
 function annoyingSong(startingNum){
-  for (startingNum > 2; startingNum--){
-    return `${startingNum} bottles of soda on the wall, ${startingNum} bottles of soda, take one down pass it around ${startingNum--} bottles of soda on the wall`;
+  for (let i = startingNum; i > 2; i--){
+    return `${i} bottles of soda on the wall, ${i} bottles of soda, take one down pass it around ${i - 1} bottles of soda on the wall`;
+  }
 }
 
 console.log(annoyingSong(50));
@@ -274,7 +275,7 @@ Using the grade function below do the following:
   
 function grade(myGrade){
   if (myGrade < 60 ){
-    return "you got a F";
+    return "you got an F";
   }
   else if (myGrade <= 69){
     return "you got a D";
