@@ -170,39 +170,34 @@ Use the game function below to do the following:
   
   HINT: Remember that the order in which we pass in our arguments matters when it comes to parameters
 */
-let computer = Math.random();
 
-function game(user, computer){
-    if (user === 'rock' && computer < .34){
-      return "it's a tie";
-    }
-    else if (user === 'rock' && computer < .67){
-      return "you lose!";
-    }
-    else if (user === 'rock' && computer >= .67){
-      return "you win!";
-    }
-    else if (user === 'paper' && computer < .34){
-      return "you win!";
-    }
-    else if (user === 'paper' && computer < .67){
-      return "it's a tie";
-    }
-    else if (user === 'paper' && computer >= .66){
-      return "you lose!";
-    }
-    else if (user === 'scissors' && computer < .34){
-      return "you lose!";
-    }
-    else if (user === 'scissors' && computer < .67){
-      return "you win!";
-    } else {
-      return "it's a tie";
-    }
+var computerChoice = Math.random();
+if (computerChoice < 0.34) {
+  computerChoice = "rock";
+} else if(computerChoice <= 0.67) {
+  computerChoice = "paper";
+} else {
+  computerChoice = "scissors";
 }
-
-console.log(game('scissors', computer));
-  
+function game(userChoice,computerChoice){
+  if (userChoice === computerChoice) {
+    return "it's a tie";
+  } 
+  if ((userChoice === 'rock') && (computerChoice === 'scissors')) {
+    return "you win!";
+  } else if ((userChoice === 'paper') && (computerChoice === 'rock')) {
+    return 'you win!';
+  } else if ((userChoice === 'scissors') && (computerChoice === 'paper')) {
+    return 'you win!';
+  }
+  if ((userChoice === 'rock') && (computerChoice === 'paper')) {
+    return 'you lose!';
+  } else if ((userChoice === 'paper') && (computerChoice === 'scissors')) {
+    return 'you lose!';
+  } else if ((userChoice === 'scissors') && (computerChoice === 'rock')) {
+    return 'you lose!';
+  }
+}
   
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -250,11 +245,11 @@ Using the annoyingSong function below do the following:
 
 function annoyingSong(startingNum){
   for (let i = startingNum; i > 2; i--){
-    return `${i} bottles of soda on the wall, ${i} bottles of soda, take one down pass it around ${i - 1} bottles of soda on the wall`;
+    return(`${i} bottles of soda on the wall, ${i} bottles of soda, take one down pass it around ${i - 1} bottles of soda on the wall`);
   }
 }
 
-console.log(annoyingSong(50));
+annoyingSong(50);
 
 
 
